@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'carrierwave'
 gem 'rails', '4.0.0'
 gem 'pg'
 gem 'sqlite3'
