@@ -15,7 +15,8 @@ class TicketsController < ApplicationController
     end
   end
   def show
-    @ticket = Ticket.find(params[:id])
+    @ticket  = Ticket.find(params[:id])
+    @comment = @ticket.comments.build
   end
   private
   def set_project
