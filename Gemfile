@@ -4,8 +4,6 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'carrierwave'
 gem 'rails', '4.0.0'
 gem 'pg'
-gem 'sqlite3'
-
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -21,6 +19,7 @@ end
 group :test, :development do
 gem 'rspec-rails', "~> 2.13.2"
 gem 'pry'
+gem 'factory_girl'
 end
 group :test do
 gem 'capybara', "2.0.2"
