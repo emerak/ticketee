@@ -3,5 +3,7 @@ Ticketee::Application.routes.draw do
   get "users/create"
   get "users/show"
   root :to => "projects#index"
-  resources :projects
+  resources :projects do
+    resources :tickets
+  end
 end
