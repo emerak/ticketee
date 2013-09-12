@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130911192329) do
+ActiveRecord::Schema.define(version: 20130912161250) do
 
   create_table "assets", force: true do |t|
     t.string   "asset"
@@ -66,5 +66,13 @@ ActiveRecord::Schema.define(version: 20130911192329) do
 
   add_index "tickets", ["project_id"], name: "index_tickets_on_project_id", using: :btree
   add_index "tickets", ["state_id"], name: "index_tickets_on_state_id", using: :btree
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
