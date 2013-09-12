@@ -1,0 +1,7 @@
+
+<%= div_for(comment) do %>
+<%= simple_format(comment.text) %>
+<%= time_ago_in_words(comment.created_at)  %><p> Ago</p>
+<br/>
+State: <%= state_for(comment) %>
+<% end %>
