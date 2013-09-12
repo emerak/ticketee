@@ -1,4 +1,5 @@
 require 'spec_helper'
+
 feature "Creating comments" do
   before do
     project = FactoryGirl.create(:project)
@@ -21,5 +22,15 @@ feature "Creating comments" do
   scenario "Creating an invalid comment" do
     click_button "Create Comment"
     page.should have_content("Comment has not been created.")
+  end
+
+  scenario "Adding a tag to a ticket" do
+    click_link ticket.title
+    page.should_not have_content("bug")
+    fill_in "Text", :with => "Adding the bug tag"
+    fill_in "Tags", :with => "bug"
+    click_button "Create Comment"
+    page.should have_content("Comment has been created.")
+    page.should have_content("bug")
   end
 end
