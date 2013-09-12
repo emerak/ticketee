@@ -15,14 +15,20 @@ class TicketsController < ApplicationController
     end
   end
   def show
-    @ticket = Ticket.find(params[:id])
+    @ticket  = Ticket.find(params[:id])
+    @comment = @ticket.comments.build
+    @states = State.all
+  end
+  def destroy
+    @ticket.destroy
+    flash[:notice] = "Ticket has been deleted."
+    redirect_to @project
   end
   private
   def set_project
     @project = Project.find(params[:project_id])
   end
   def ticket_params
-    params.require(:ticket).permit(:title, :description, assets_attributes: [:asset]
-)
+    params.require(:ticket).permit(:title, :description, :tag_names, assets_attributes: [:asset])
   end
 end

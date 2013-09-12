@@ -1,14 +1,11 @@
-<div id="ticket">
-<%= simple_format(@ticket.description) %>
-<% if @ticket.asset.present? %>
-<h3>Attached File</h3>
-<div class="asset">
-<p>
-<%= link_to File.basename(@ticket.asset.path),
-@ticket.asset.url %>
-</p>
-<p><small><%= number_to_human_size(@ticket.asset.size) %>
-</small></p>
-</div>
+<h3>Comments</h3>
+<div id='comments'>
+<%= render @ticket.state if @ticket.state %>
+<div id='tags'><%= render @ticket.tags %></div>
+<% if @ticket.comments.exists? %> 
+<%= render @ticket.comments.select(&:persisted?) %>
+<% else %>
+There are no comments for this ticket.
 <% end %>
 </div>
+<%= render "comments/form" %>
