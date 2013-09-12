@@ -7,6 +7,11 @@ Ticketee::Application.routes.draw do
     resources :tickets
   end
   resources :tickets do
-    resources :comments
+    resources :comments 
+    resources :tags do
+      member do
+        delete :remove
+      end 
+    end
   end
 end
