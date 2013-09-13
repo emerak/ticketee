@@ -1,13 +1,7 @@
 Ticketee::Application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :projects
-    end
-  end
-  
-  namespace :api do
-    namespace :v1 do
-      resources :projects
+      resources :projects, defaults: { format: :json }
     end
   end
   
