@@ -3,6 +3,7 @@ class Ticket < ActiveRecord::Base
   belongs_to :project
   searcher do
     label :tag, :from => :tags, :field => :name
+    label :state, :from => :state, :field => :name
   end
   belongs_to :state
   has_many :assets
