@@ -12,6 +12,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'searcher', git: 'git://github.com/Stial08/searcher'
 gem 'email_spec'
+gem 'rack-test'
 group :assets do
   gem 'sprockets-rails', '~> 2.0.0'
   gem'sass-rails','~> 4.0.0'
